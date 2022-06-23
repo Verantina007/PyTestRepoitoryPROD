@@ -1,0 +1,25 @@
+pipeline {
+   agent any
+
+   stages {
+
+      stage('hello') {
+        steps{      
+          echo 'Hello!'
+        }
+        }
+      
+      stage('version') {
+        steps{      
+          sh 'python3 --version'
+        }
+        }
+      
+      stage('runpy') {
+        steps{  
+          sh 'python3 -m venv venv'
+          sh 'python3 development_script.py'
+        }
+        }
+  }
+}
