@@ -1,0 +1,36 @@
+pipeline {
+   agent any
+
+   stages {
+
+       stage('1stStage') {
+         steps{      
+          echo 'Start of automated tests after commit'
+        }
+        }
+      
+       stage('2ndStage') {
+         steps{      
+          sh 'python3 Tests_1.py'
+        }
+        }
+        
+        stage('3rdStageStage') {
+          steps{      
+          sh 'python3 Tests_2.py'
+        }
+        }
+      
+       stage('4thStage') {
+         steps{  
+          sh 'python3 Tests.py'
+        }
+        }
+        
+        stage('5thStage') {
+          steps{  
+          sh 'python3 --version'
+        }
+        }
+  }
+}
